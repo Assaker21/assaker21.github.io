@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: white;
+    --text-color: #131411;
+    --hovertext-color: #d9d1cf;
+    --blue-color: #d1f3ec;
+    --darkblue-color: #4f9ed0;
+    --pink-color: #da2d2d;
+    --main-font: 2.2rem;
+    --p-font: 1.1rem;
+}
+
+.products {
+    background-color: var(--bg-color);
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+}
+
+.products-path {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    font-size: 14px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    font-weight: 600;
+    color: var(--text-color);
+    gap: 10px;
+}
+
+.products-capsule {
+    display: flex;
+    flex-direction: row;
+}
+
+.products-categories-container {
+    width: 20%;
+    background-color: white;
+    padding-left: 10px;
+}
+
+.products-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.products-filter-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.products-filter-info {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.products-under-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.products-under-category {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.products-under-category:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.products-right-container {
+    width: 80%;
+}
+
+.products-right-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.products-right-results-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.prodcuts-right-sort-by {
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.prodcuts-right-sort-by option {
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.products-items-container {
+    display: grid;
+    padding-top: 20px;
+    grid-template-columns: repeat(4, minmax(100px, auto));
+    grid-template-rows: repeat(50, auto);
+    gap: 10px;
+}
+
+.products-item-image {
+    width: 100%;
+}

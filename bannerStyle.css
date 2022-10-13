@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: white;
+    --text-color: #131411;
+    --hovertext-color: #d9d1cf;
+    --blue-color: #d1f3ec;
+    --darkblue-color: #4f9ed0;
+    --pink-color: #da2d2d;
+    --main-font: 2.2rem;
+    --p-font: 1.1rem;
+}
+
+.banner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(400px, 5000px));
+    grid-template-rows: repeat(1, auto);
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    gap: 10px;
+    overflow-x: scroll;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.banner::-webkit-scrollbar {
+    height: 30px;
+    width: 10px;
+    margin: 10px;
+}
+
+.banner::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.banner::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    height: 10px;
+    border: 10px solid transparent;
+    background-clip: padding-box;
+    padding: -10px;
+    background-color: var(--text-color);
+    transition: all 0.2s ease;
+}
+
+.banner-item::-webkit-scrollbar-thumb:hover {
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.banner-item {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--text-color);
+}
+
+.banner img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.banner-item-details {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.banner-item-details h2 {
+    color: var(--text-color);
+    padding: 20px;
+    padding-bottom: 0px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.banner-item-details h3 {
+    color: var(--text-color);
+    padding-top: 5px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.banner-item-details h4 {
+    color: var(--text-color);
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.banner-item:hover {
+    cursor: pointer;
+}
+
+.banner-item:hover>.banner-item-details>h3 {
+    text-decoration: underline;
+}
+
+.banner-item:hover>.banner-item-details>h4 {
+    text-decoration: underline;
+}
+
+@media (max-width: 534px) {
+    .banner {
+        grid-template-columns: repeat(3, minmax(80%, 5000px));
+    }
+    .banner::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        pointer-events: none;
+        height: 0;
+        display: none;
+    }
+    .banner::-webkit-scrollbar {
+        height: 0px;
+        width: 0px;
+        margin: 0px;
+        display: none;
+    }
+}

@@ -1,0 +1,386 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: white;
+    --text-color: #131411;
+    --hovertext-color: #d9d1cf;
+    --blue-color: #d1f3ec;
+    --darkblue-color: #4f9ed0;
+    --pink-color: #da2d2d;
+    --main-font: 2.2rem;
+    --p-font: 1.1rem;
+}
+
+.quicklook {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.quicklook.active {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.quicklook.touch {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 60px));
+    background-color: rgba(0, 0, 0, 0);
+    outline: 500px solid rgba(0, 0, 0, 0);
+    opacity: 0;
+    pointer-events: none;
+    /*transform: translateY(10px);*/
+    transition: all 0.2s ease-in-out;
+}
+
+.quicklook.touch.active {
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: 500px solid rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    pointer-events: all;
+    /*transform: translateY(-10px);*/
+}
+
+.quicklook-container {
+    width: 100%;
+    max-width: 1024px;
+    height: auto;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    margin: auto auto;
+    margin-top: calc(50vh - 260px);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    position: relative;
+}
+
+.quicklook-container.touch {
+    width: 100%;
+    height: 90vh;
+    background-color: var(--bg-color);
+    margin: auto auto;
+    margin-top: 10vh;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    overflow-y: scroll;
+
+    position: relative;
+}
+
+.quicklook-x-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.quicklook-x-button:hover {
+    cursor: pointer;
+}
+
+.quicklook-images-container {
+    width: 33%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quicklook-images-container.touch {
+    width: 100%;
+}
+
+.quicklook-main-image {
+    width: 100%;
+    margin: 20px;
+    /*10px*/
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.quicklook-main-image.touch {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 30vh;
+    /*70%*/
+}
+
+.quicklook-small-images-container {
+    z-index: 2000;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 0 20px;
+    /*10px*/
+    margin-bottom: 20px;
+    /*10px*/
+}
+
+.quicklook-small-images-container.touch {
+    width: 30vh;
+    /*70%*/
+    margin: 0 auto;
+}
+
+.quicklook-small-image {
+    width: calc(20% - 10px);
+    height: auto;
+    border-radius: 50px;
+    outline: 1px solid rgba(0, 0, 0, 0);
+    transition: outline-color 0.2s ease-in-out;
+}
+
+.quicklook-small-image:hover {
+    outline: 1px solid rgba(0, 0, 0, 0.5);
+    outline-offset: 3px;
+    cursor: pointer;
+}
+
+.quicklook-small-image.selected {
+    outline: 1px solid var(--text-color);
+    outline-offset: 3px;
+}
+
+.quicklook-details-container {
+    width: 67%;
+    margin: 30px;
+}
+
+.quicklook-details-container.touch {
+    width: 100%;
+    margin: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.quicklook-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.quicklook-product-brand {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.quicklook-product-name {
+    color: var(--text-color);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.quicklook-product-description {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.quicklook-product-more-details {
+    color: var(--darkblue-color);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.quicklook-product-more-details.touch {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.quicklook-product-more-details:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.quicklook-bottom-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.quicklook-bottom-details.touch {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.quicklook-prices-and-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quicklook-prices {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.quicklook-product-original-price {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+.quicklook-product-original-price.no-show {
+    opacity: 0;
+    display: none;
+    position: absolute;
+    pointer-events: none;
+}
+
+.quicklook-product-discounted-price {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.quicklook-feature {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.quicklook-check {
+    color: green;
+}
+
+.quicklook-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.quicklook-product-count {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.quicklook-product-count.touch {
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.quicklook-product-count:focus {
+    border: 1px solid var(--text-color);
+}
+
+.quicklook-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quicklook-buttons.touch {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quicklook-add-to-basket-button {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bg-color);
+    background-color: var(--pink-color);
+    border-radius: 50px;
+    text-align: center;
+    /*padding: 15px 20px;*/
+    width: 140px;
+    height: 40px;
+    padding: 10px 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.quicklook-add-to-basket-button:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+.quicklook-add-to-favorites-button {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    outline: 1px solid var(--text-color);
+    outline-offset: -1px;
+    border-radius: 50px;
+    text-align: center;
+    /*padding: 15px 20px;*/
+    width: 140px;
+    height: 40px;
+    padding: 10px 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.quicklook-add-to-favorites-button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    cursor: pointer;
+}
