@@ -200,6 +200,10 @@
 		height: 0;
 	}
 
+	.content-left {
+		padding-left: 0px;
+	}
+
 	.content-features h2 {
 		align-items: center;
 		text-align: center;

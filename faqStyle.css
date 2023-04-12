@@ -24,7 +24,7 @@
 	width: 100%;
 }
 
-.title {
+/*.title {
 	padding-top: 44px;
 	font-size: 48px;
 	font-weight: 800;
@@ -32,6 +32,18 @@
 	font-family: "Manrope", sans-serif;
 	color: whitesmoke;
 	width: 100%;
+}*/
+
+.title {
+	padding-top: 40px;
+	font-size: 36px;
+	font-weight: 700;
+	letter-spacing: -1.08px;
+	font-family: "Manrope", sans-serif;
+	color: whitesmoke;
+	text-align: center;
+	width: 100%;
+	padding: 0;
 }
 
 .container h3 {
