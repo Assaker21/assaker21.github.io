@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" href="applyStyle.css" />
+		<link rel="stylesheet" href="mainStyle.css" />
+
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+		<title>Chas Productions</title>
+	</head>
+	<body>
+		<header>
+			<div class="header-content">
+				<a href="home.html"><img src="CHAS Logo White.png" /></a>
+			</div>
+		</header>
+
+		<section class="content">
+			<form action="https://formspree.io/f/mwkjwngl" method="POST">
+				<h2 class="title">so it begins.</h2>
+
+				<h3 class="question-title">what's your name? - required</h3>
+				<h4 class="question-subtitle">we'll use this to contact you.</h4>
+				<input name="name" type="text" class="input" placeholder="supermaniac" required />
+
+				<h3 class="question-title">what do you want to create? - required</h3>
+				<h4 class="question-subtitle">we really don't care how "hard" or "big" the idea is - whatever. as long as you hard excited about it.</h4>
+				<textarea required name="idea" type="text" rows="13" class="input" placeholder="try to give examples to illustrate it better. there is not word limit too - explain yourself to the fullest."></textarea>
+
+				<h3 class="question-title">what's your email? - required</h3>
+				<h4 class="question-subtitle">well, we'd need to contact you somehow right?</h4>
+				<input required name="email" type="email" class="input" placeholder="your_best_email@chas.com" />
+
+				<h3 class="question-title">optional - building with a squad?</h3>
+				<h4 class="question-subtitle">make sure to add the rest of your teams emails here. we'll make sure to keep them in the loop. only one teammate needs to apply for the entire team.</h4>
+				<textarea name="squad" type="text" rows="5" class="input" placeholder="everybody's emails go here."></textarea>
+
+				<h3 class="question-title">optional - where are you based?</h3>
+				<h4 class="question-subtitle">irl events and meetups...</h4>
+				<input name="position" type="text" class="input" placeholder="Beirut, Lebanon" />
+
+				<div class="button-container">
+					<button type="submit" class="submit-button">submit</button>
+				</div>
+			</form>
+		</section>
+		<footer>
+			<div class="footer-container">
+				<div class="footer-link-container">
+					<a href="home.html" class="footer-link">home</a>
+					<a href="apply.html" class="footer-link active-link">apply</a>
+					<a href="faq.html" class="footer-link">faq</a>
+					<a href="contact.html" class="footer-link">talk to us</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
